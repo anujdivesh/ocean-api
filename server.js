@@ -32,13 +32,13 @@ const db = require("./app/models");
 
 // db.sequelize.sync();
 // force: true will drop the table if it already exists
-//db.sequelize.sync({force:true}).then(() => {
-//  console.log('Drop and Resync Database with { force: true }');
-//  initial();
-//});
+db.sequelize.sync({force:true}).then(() => {
+  console.log('Drop and Resync Database with { force: true }');
+  initial();
+});
 
 //prod
-db.sequelize.sync();
+//db.sequelize.sync();
 
 // simple route
 app.get("/", (req, res) => {
@@ -136,7 +136,9 @@ function initial() {
     health:'Excellent',
     fail_count:0,
     success_count:0,
-    reset_count: 0
+    reset_count: 0,
+    created_by:'root',
+    launched_by:'root'
   });
   
   Log.create({

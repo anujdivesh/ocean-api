@@ -37,7 +37,13 @@ exports.findOrCreate = (req, res) => {
       health:req.body.health,
       fail_count:req.body.fail_count,
       success_count:req.body.success_count,
-      reset_count: req.body.reset_count
+      reset_count: req.body.reset_count,
+      predecessor_class:req.body.predecessor_class,
+      predecessor_class_id:req.body.predecessor_class_id,
+      successor_class:req.body.successor_class,
+      successor_class_id:req.body.successor_class_id,
+      created_by:req.body.created_by,
+      launched_by:req.body.launched_by
   })
     .then(data => {
       if (!data) {
@@ -102,7 +108,13 @@ exports.update = async(req, res) => {
           health:req.body.health,
           fail_count:req.body.fail_count,
           success_count:req.body.success_count,
-          reset_count: req.body.reset_count
+          reset_count: req.body.reset_count,
+          predecessor_class:req.body.predecessor_class,
+          predecessor_class_id:req.body.predecessor_class_id,
+          successor_class:req.body.successor_class,
+          successor_class_id:req.body.successor_class_id,
+          created_by:req.body.created_by,
+          launched_by:req.body.launched_by
       },{
         where:{
           id: req.params.id,
