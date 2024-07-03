@@ -138,7 +138,8 @@ function initial() {
     success_count:0,
     reset_count: 0,
     created_by:'root',
-    launched_by:'root'
+    launched_by:'root',
+    retain: false,
   });
   
   Log.create({

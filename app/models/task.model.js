@@ -67,11 +67,19 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.INTEGER
       },
       created_by:{
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        default:'root'
       },
       launched_by:{
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        default:'root'
       },
+      retain:{
+        type: Sequelize.BOOLEAN,
+      },
+      retention_days:{
+        type:Sequelize.INTEGER
+      }
 
     });
   

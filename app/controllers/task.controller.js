@@ -43,7 +43,9 @@ exports.findOrCreate = (req, res) => {
       successor_class:req.body.successor_class,
       successor_class_id:req.body.successor_class_id,
       created_by:req.body.created_by,
-      launched_by:req.body.launched_by
+      launched_by:req.body.launched_by,
+      retain: req.body.retain,
+      retention_days: req.body.retention_days
   })
     .then(data => {
       if (!data) {
@@ -114,7 +116,9 @@ exports.update = async(req, res) => {
           successor_class:req.body.successor_class,
           successor_class_id:req.body.successor_class_id,
           created_by:req.body.created_by,
-          launched_by:req.body.launched_by
+          launched_by:req.body.launched_by,
+          retain: req.body.retain,
+          retention_days: req.body.retention_days
       },{
         where:{
           id: req.params.id,
