@@ -41,7 +41,7 @@ db.sequelize.sync({force:true}).then(() => {
 //db.sequelize.sync();
 
 // simple route
-app.get("/", (req, res) => {
+app.get("/v1", (req, res) => {
   res.json({ message: "Pacific Ocean Portal secured with JWT, OpenAPI 1.0 " });
 });
 

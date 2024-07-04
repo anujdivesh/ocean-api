@@ -17,23 +17,23 @@ module.exports = app => {
   // Retrieve all Tutorials
   router.get("/", organization.findAll);
 
-  app.use('/api/organizations', router);
+  app.use('/v1/api/organizations', router);
 
 
   app.post(
-    "/api/organization/add",
+    "/v1/api/organization/add",
     controller.findOrCreate
   );
   app.get(
-    "/api/organization/:id",
+    "/v1/api/organization/:id",
     controller.findOne
   );
   app.put(
-    "/api/organization/:id",
+    "/v1/api/organization/:id",
     controller.update
   );
   app.delete(
-    "/api/organization/:id",
+    "/v1/api/organization/:id",
     controller.destroy
   );
 };

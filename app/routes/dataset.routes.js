@@ -17,23 +17,23 @@ module.exports = app => {
   // Retrieve all Tutorials
   router.get("/", dataset.findAll);
 
-  app.use('/api/datasets', router);
+  app.use('/v1/api/datasets', router);
 
 
   app.post(
-    "/api/dataset/add",
+    "/v1/api/dataset/add",
     controller.findOrCreate
   );
   app.get(
-    "/api/dataset/:id",
+    "/v1/api/dataset/:id",
     controller.findOne
   );
   app.put(
-    "/api/dataset/:id",
+    "/v1/api/dataset/:id",
     controller.update
   );
   app.delete(
-    "/api/dataset/:id",
+    "/v1/api/dataset/:id",
     controller.destroy
   );
 };
