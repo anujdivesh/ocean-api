@@ -51,6 +51,12 @@ module.exports = (sequelize, Sequelize) => {
       download_frequency: {
         type: Sequelize.STRING,
       },
+      upload_frequency_hours: {
+        type: Sequelize.STRING,
+      },
+      variables: {
+        type: Sequelize.STRING,
+      },
       subset: {
         type: Sequelize.BOOLEAN,
       },

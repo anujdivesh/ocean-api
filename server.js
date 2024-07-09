@@ -115,6 +115,8 @@ function initial() {
     download_file_type:"netCDF",
     download_directory:"/home/pop/ocean_portal/datasets/model/regional/ww3forecast/forecast",
     download_frequency:"daily",
+    upload_frequency_hours: "6",
+    variables: "sig_Wave",
     subset:true,
     subset_region:"PAC",
     is_subset_auto: true,

@@ -42,6 +42,8 @@ exports.findOrCreate = (req, res) => {
       download_file_type: req.body.download_file_type,
       download_directory: req.body.download_directory,
       download_frequency: req.body.download_frequency,
+      upload_frequency_hours: req.body.upload_frequency_hours,
+      variables: req.body.variables,
       subset: req.body.subset,
       subset_region: req.body.subset_region,
       is_subset_auto: req.body.is_subset_auto
