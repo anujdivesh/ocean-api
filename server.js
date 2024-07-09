@@ -116,7 +116,8 @@ function initial() {
     download_directory:"/home/pop/ocean_portal/datasets/model/regional/ww3forecast/forecast",
     download_frequency:"daily",
     subset:true,
-    subset_region:"PAC"
+    subset_region:"PAC",
+    is_subset_auto: true,
   });
   
   Task.create({
@@ -132,6 +133,8 @@ function initial() {
     task_start_time:"2024-06-05 00:00:00",
     next_run_time:"2024-06-02T00:00:00.000Z",
     last_run_time:"2024-06-02T00:00:00.000Z",
+    next_download_file: '',
+    last_download_file: '',
     enabled:true,
     health:'Excellent',
     fail_count:0,

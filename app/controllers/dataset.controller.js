@@ -43,7 +43,8 @@ exports.findOrCreate = (req, res) => {
       download_directory: req.body.download_directory,
       download_frequency: req.body.download_frequency,
       subset: req.body.subset,
-      subset_region: req.body.subset_region
+      subset_region: req.body.subset_region,
+      is_subset_auto: req.body.is_subset_auto
     }
   })
     .then(data => {
@@ -110,7 +111,8 @@ exports.update = async(req, res) => {
         download_directory: req.body.download_directory,
         download_frequency: req.body.download_frequency,
         subset: req.body.subset,
-        subset_region: req.body.subset_region
+        subset_region: req.body.subset_region,
+        is_subset_auto: req.body.is_subset_auto
       },{
         where:{
           id: req.params.id,

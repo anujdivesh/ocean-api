@@ -36,6 +36,12 @@ module.exports = (sequelize, Sequelize) => {
       last_run_time: {
         type: Sequelize.DATE
       },
+      next_download_file: {
+        type: Sequelize.STRING
+      },
+      last_download_file: {
+        type: Sequelize.STRING
+      },
       enabled: {
         type: Sequelize.BOOLEAN
       },

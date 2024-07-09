@@ -56,7 +56,10 @@ module.exports = (sequelize, Sequelize) => {
       },
       subset_region: {
         type: Sequelize.STRING,
-      }
+      },
+      is_subset_auto: {
+        type: Sequelize.BOOLEAN,
+      },
     });
     return Dataset;
 }
