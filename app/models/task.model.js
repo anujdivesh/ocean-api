@@ -3,7 +3,7 @@ module.exports = (sequelize, Sequelize) => {
       task_name: {
         type: Sequelize.STRING,
       },
-      class: {
+      class_id: {
         type: Sequelize.STRING,
       },
       dataset_id: {

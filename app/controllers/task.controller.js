@@ -25,7 +25,7 @@ exports.findOrCreate = (req, res) => {
     },
     defaults:{
       task_name: req.body.task_name,
-      class:req.body.class,
+      class_id:req.body.class_id,
       dataset_id: req.body.dataset_id,
       status: req.body.status,
       priority: req.body.priority,
@@ -144,7 +144,7 @@ exports.update = async(req, res) => {
     Task.update(
         {
           task_name: req.body.task_name,
-          class:req.body.class,
+          class_id:req.body.class_id,
           dataset_id: req.body.dataset_id,
           status: req.body.status,
           priority: req.body.priority,
