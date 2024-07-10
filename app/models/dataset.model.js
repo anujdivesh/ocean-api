@@ -45,14 +45,29 @@ module.exports = (sequelize, Sequelize) => {
       download_file_type: {
         type: Sequelize.STRING,
       },
-      download_directory: {
+      download_to_local_dir: {
+        type: Sequelize.BOOLEAN,
+      },
+      local_directory_path: {
         type: Sequelize.STRING,
       },
-      download_frequency: {
+      scp: {
+        type: Sequelize.BOOLEAN,
+      },
+      scp_server_path: {
         type: Sequelize.STRING,
       },
-      upload_frequency_hours: {
+      frequency_type: {
         type: Sequelize.STRING,
+      },
+      frequency_count: {
+        type: Sequelize.INTEGER,
+      },
+      check_every_type: {
+        type: Sequelize.STRING,
+      },
+      check_count: {
+        type: Sequelize.INTEGER,
       },
       variables: {
         type: Sequelize.STRING,

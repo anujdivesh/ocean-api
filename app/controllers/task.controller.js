@@ -18,17 +18,17 @@ exports.findAll = (req, res) => {
       });
     });
 };
-
 exports.findOrCreate = (req, res) => {
-  return Task.create({
+  return Task.findOrCreate({
+    where:{
+      task_name:{[Op.like] :req.body.task_name}
+    },
+    defaults:{
       task_name: req.body.task_name,
-      task_class:req.body.task_class,
-      task_class_id: req.body.task_class_id,
+      class:req.body.lass,
+      dataset_id: req.body.dataset_id,
       status: req.body.status,
       priority: req.body.priority,
-      frequency: req.body.frequency,
-      occurance_days: req.body.occurance_days,
-      occurance_hours: req.body.occurance_hours,
       duration: req.body.duration,
       task_start_time: req.body.task_start_time,
       next_run_time: req.body.next_run_time,
@@ -40,6 +40,53 @@ exports.findOrCreate = (req, res) => {
       fail_count:req.body.fail_count,
       success_count:req.body.success_count,
       reset_count: req.body.reset_count,
+      attempt_count: req.body.attempt_count,
+      predecessor_class:req.body.predecessor_class,
+      predecessor_class_id:req.body.predecessor_class_id,
+      successor_class:req.body.successor_class,
+      successor_class_id:req.body.successor_class_id,
+      created_by:req.body.created_by,
+      launched_by:req.body.launched_by,
+      retain: req.body.retain,
+      retention_days: req.body.retention_days
+    }
+  })
+  .then(data => {
+    if (!data) {
+      return res.status(500).send({ message: "Params cannot be empty." });
+    }
+    if (data[1]==true){
+      res.status(200).send({message:'Task Created.'})
+    }
+    else{
+      res.status(200).send({message:'Task Exists.'})
+    }
+})
+    .catch((err) => {
+      res.status(500).send({ message: "An Error Occurred."+err });
+      
+    });
+};
+/*
+exports.findOrCreate = (req, res) => {
+  return Task.create({
+      task_name: req.body.task_name,
+      class:req.body.lass,
+      dataset_id: req.body.dataset_id,
+      status: req.body.status,
+      priority: req.body.priority,
+      duration: req.body.duration,
+      task_start_time: req.body.task_start_time,
+      next_run_time: req.body.next_run_time,
+      last_run_time: req.body.last_run_time,
+      next_download_file: req.body.next_download_file,
+      last_download_file: req.body.last_download_file,
+      enabled: req.body.enabled,
+      health:req.body.health,
+      fail_count:req.body.fail_count,
+      success_count:req.body.success_count,
+      reset_count: req.body.reset_count,
+      attempt_count: req.body.attempt_count,
       predecessor_class:req.body.predecessor_class,
       predecessor_class_id:req.body.predecessor_class_id,
       successor_class:req.body.successor_class,
@@ -65,7 +112,7 @@ exports.findOrCreate = (req, res) => {
       
     });
 };
-
+*/
 exports.findOne = (req, res) => {
   const countryId = req.params.id;
 
@@ -97,13 +144,10 @@ exports.update = async(req, res) => {
     Task.update(
         {
           task_name: req.body.task_name,
-          task_class:req.body.task_class,
-          task_class_id: req.body.task_class_id,
+          class:req.body.lass,
+          dataset_id: req.body.dataset_id,
           status: req.body.status,
           priority: req.body.priority,
-          frequency: req.body.frequency,
-          occurance_days: req.body.occurance_days,
-          occurance_hours: req.body.occurance_hours,
           duration: req.body.duration,
           task_start_time: req.body.task_start_time,
           next_run_time: req.body.next_run_time,
@@ -115,6 +159,7 @@ exports.update = async(req, res) => {
           fail_count:req.body.fail_count,
           success_count:req.body.success_count,
           reset_count: req.body.reset_count,
+          attempt_count: req.body.attempt_count,
           predecessor_class:req.body.predecessor_class,
           predecessor_class_id:req.body.predecessor_class_id,
           successor_class:req.body.successor_class,

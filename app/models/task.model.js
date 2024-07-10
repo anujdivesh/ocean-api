@@ -3,25 +3,16 @@ module.exports = (sequelize, Sequelize) => {
       task_name: {
         type: Sequelize.STRING,
       },
-      task_class: {
+      class: {
         type: Sequelize.STRING,
       },
-      task_class_id: {
+      dataset_id: {
         type: Sequelize.INTEGER,
       },
       status: {
         type: Sequelize.STRING
       },
       priority: {
-        type: Sequelize.STRING
-      },
-      frequency: {
-        type: Sequelize.STRING
-      },
-      occurance_days: {
-        type: Sequelize.STRING
-      },
-      occurance_hours: {
         type: Sequelize.STRING
       },
       duration: {
@@ -57,6 +48,10 @@ module.exports = (sequelize, Sequelize) => {
         default:0
       },
       reset_count:{
+        type: Sequelize.INTEGER,
+        default:0
+      },
+      attempt_count:{
         type: Sequelize.INTEGER,
         default:0
       },
