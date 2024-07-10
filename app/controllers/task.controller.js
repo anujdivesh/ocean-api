@@ -25,7 +25,7 @@ exports.findOrCreate = (req, res) => {
     },
     defaults:{
       task_name: req.body.task_name,
-      class:req.body.lass,
+      class:req.body.class,
       dataset_id: req.body.dataset_id,
       status: req.body.status,
       priority: req.body.priority,
@@ -144,7 +144,7 @@ exports.update = async(req, res) => {
     Task.update(
         {
           task_name: req.body.task_name,
-          class:req.body.lass,
+          class:req.body.class,
           dataset_id: req.body.dataset_id,
           status: req.body.status,
           priority: req.body.priority,
@@ -190,13 +190,14 @@ catch(err){
 
 exports.destroy = (req,res) => {
   const countryId = req.params.id;
+  console.log(countryId)
   return Task.findByPk(countryId)
     .then((countryId) => {
       if (!countryId) {
         return res.status(200).send({ message: "Task Not found." });
       }
       else{
-        Dataset.destroy({where:{id:req.params.id}});
+        Task.destroy({where:{id:req.params.id}});
         res.status(200).send({ message: "Task deleted!" });
       }
     })
