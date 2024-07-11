@@ -60,14 +60,32 @@ module.exports = (sequelize, Sequelize) => {
       frequency_type: {
         type: Sequelize.STRING,
       },
-      frequency_count: {
+      frequency_minutes: {
         type: Sequelize.INTEGER,
+        defaultValue:0
+      },
+      frequency_hours: {
+        type: Sequelize.INTEGER,
+        defaultValue:0
+      },
+      frequency_days: {
+        type: Sequelize.INTEGER,
+        defaultValue:0
       },
       check_every_type: {
         type: Sequelize.STRING,
       },
-      check_count: {
+      check_minutes: {
         type: Sequelize.INTEGER,
+        defaultValue:0
+      },
+      check_hours: {
+        type: Sequelize.INTEGER,
+        defaultValue:0
+      },
+      check_days: {
+        type: Sequelize.INTEGER,
+        defaultValue:0
       },
       variables: {
         type: Sequelize.STRING,
