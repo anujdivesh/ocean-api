@@ -121,15 +121,17 @@ function initial() {
     frequency_hours:6,
     check_every_type: "minutes",
     check_minutes: 30,
-    variables: "sig_Wave",
+    has_variables:true,
+    variables: "sig_wave",
     subset:true,
     subset_region:"PAC",
     is_subset_auto: true,
+    create_latest: false
   });
   
   Task.create({
     task_name:"Download WW3 Datasets",
-    class:"data_download",
+    class_id:"data_download",
     dataset_id:1,
     status:"Ready",
     priority:"Medium",

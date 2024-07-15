@@ -57,9 +57,6 @@ module.exports = (sequelize, Sequelize) => {
       scp_server_path: {
         type: Sequelize.STRING,
       },
-      frequency_type: {
-        type: Sequelize.STRING,
-      },
       frequency_minutes: {
         type: Sequelize.INTEGER,
         defaultValue:0
@@ -71,9 +68,6 @@ module.exports = (sequelize, Sequelize) => {
       frequency_days: {
         type: Sequelize.INTEGER,
         defaultValue:0
-      },
-      check_every_type: {
-        type: Sequelize.STRING,
       },
       check_minutes: {
         type: Sequelize.INTEGER,
@@ -87,6 +81,9 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.INTEGER,
         defaultValue:0
       },
+      has_variables: {
+        type: Sequelize.BOOLEAN,
+      },
       variables: {
         type: Sequelize.STRING,
       },
@@ -97,6 +94,9 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING,
       },
       is_subset_auto: {
+        type: Sequelize.BOOLEAN,
+      },
+      create_latest: {
         type: Sequelize.BOOLEAN,
       },
     });
