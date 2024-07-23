@@ -106,11 +106,11 @@ module.exports = (sequelize, Sequelize) => {
       subset: {
         type: Sequelize.BOOLEAN,
       },
-      subset_region: {
+      xmin_xmax: {
         type: Sequelize.STRING,
       },
-      is_subset_auto: {
-        type: Sequelize.BOOLEAN,
+      ymin_ymax: {
+        type: Sequelize.STRING,
       },
       create_latest: {
         type: Sequelize.BOOLEAN,

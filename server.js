@@ -128,8 +128,8 @@ function initial() {
     has_variables:true,
     variables: "sig_wave",
     subset:true,
-    subset_region:"PAC",
-    is_subset_auto: true,
+    xmin_xmax:"-45,45",
+    ymin_ymax: "100,300",
     create_latest: false
   });
   

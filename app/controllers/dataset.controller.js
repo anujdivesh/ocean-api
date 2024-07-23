@@ -57,8 +57,8 @@ exports.findOrCreate = (req, res) => {
           variables: req.body.variables,
           has_variables: req.body.has_variables,
           subset: req.body.subset,
-          subset_region: req.body.subset_region,
-          is_subset_auto: req.body.is_subset_auto,
+          xmin_xmax: req.body.xmin_xmax,
+          ymin_ymax: req.body.ymin_ymax,
           create_latest: req.body.create_latest
     }
   })
@@ -140,8 +140,8 @@ exports.update = async(req, res) => {
           variables: req.body.variables,
           has_variables: req.body.has_variables,
           subset: req.body.subset,
-          subset_region: req.body.subset_region,
-          is_subset_auto: req.body.is_subset_auto,
+          xmin_xmax: req.body.xmin_xmax,
+          ymin_ymax: req.body.ymin_ymax,
           create_latest: req.body.create_latest
       },{
         where:{
