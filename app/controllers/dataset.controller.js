@@ -59,7 +59,9 @@ exports.findOrCreate = (req, res) => {
           subset: req.body.subset,
           xmin_xmax: req.body.xmin_xmax,
           ymin_ymax: req.body.ymin_ymax,
-          create_latest: req.body.create_latest
+          create_latest: req.body.create_latest,
+          force_forecast: req.body.force_forecast,
+          force_days:req.body.force_days
     }
   })
     .then(data => {
@@ -142,7 +144,9 @@ exports.update = async(req, res) => {
           subset: req.body.subset,
           xmin_xmax: req.body.xmin_xmax,
           ymin_ymax: req.body.ymin_ymax,
-          create_latest: req.body.create_latest
+          create_latest: req.body.create_latest,
+          force_forecast: req.body.force_forecast,
+          force_days:req.body.force_days
       },{
         where:{
           id: req.params.id,

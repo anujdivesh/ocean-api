@@ -115,6 +115,14 @@ module.exports = (sequelize, Sequelize) => {
       create_latest: {
         type: Sequelize.BOOLEAN,
       },
+      force_forecast:{
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
+      force_days:{
+        type: Sequelize.INTEGER,
+        defaultValue:0
+      }
     });
     return Dataset;
 }
